@@ -1,1 +1,1 @@
-# statusphere-social
+# statusphere-client
