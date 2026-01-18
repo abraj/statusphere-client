@@ -11,3 +11,5 @@ did_cache.sqlite
 did_cache.sqlite-shm
 did_cache.sqlite-wal
 sequencer.sqlite
+sequencer.sqlite-shm
+sequencer.sqlite-wal
