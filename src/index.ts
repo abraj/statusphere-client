@@ -3,6 +3,7 @@ import type http from 'node:http'
 import express, { type Express } from 'express'
 import { pino } from 'pino'
 import { authMiddleware, type MiddlewareConfig } from '@onelyid/client'
+import { oauthMiddleware } from '@onelyid/provider'
 
 import { env } from '#/lib/env'
 import { createRouter } from '#/routes'
@@ -39,6 +40,9 @@ export class Server {
       // loginRedirect: '/',
     };
     app.use(authMiddleware(config))
+
+    const middleware = await oauthMiddleware()
+    app.use(middleware)
 
     app.use(router)
     app.use((_req, res) => res.sendStatus(404))

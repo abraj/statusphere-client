@@ -4,3 +4,10 @@ dist/
 .env
 .DS_Store
 database.sqlite
+account.sqlite
+account.sqlite-shm
+account.sqlite-wal
+did_cache.sqlite
+did_cache.sqlite-shm
+did_cache.sqlite-wal
+sequencer.sqlite
