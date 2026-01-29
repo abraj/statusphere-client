@@ -2,6 +2,7 @@ import events from 'node:events'
 import type http from 'node:http'
 import express, { type Express } from 'express'
 import { pino } from 'pino'
+import { authMiddleware } from '@onelyid/express'
 
 import { env } from '#/lib/env'
 import { createRouter } from '#/routes'
@@ -27,6 +28,8 @@ export class Server {
 
     // Routes & middlewares
     const router = createRouter(ctx)
+
+    app.use(authMiddleware())
 
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }))
