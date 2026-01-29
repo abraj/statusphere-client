@@ -58,8 +58,9 @@ export const createRouter = (ctx: AppContext) => {
   // Home page
   router.get(
     '/',
-    handler(async (_req, res) => {
-      return res.type('html').send(page(home({})))
+    handler(async (req, res) => {
+      await req.getAuth()
+      return res.type('html').send(page(home({ user: req.auth })))
     })
   )
 
