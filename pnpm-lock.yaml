@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@onelyid/express':
+        specifier: file:../onelyid/packages/express
+        version: file:../onelyid/packages/express(express@4.22.1)
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -224,6 +227,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@onelyid/express@file:../onelyid/packages/express':
+    resolution: {directory: ../onelyid/packages/express, type: directory}
+    peerDependencies:
+      express: ^4.17.2
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
@@ -1136,6 +1144,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@onelyid/express@file:../onelyid/packages/express(express@4.22.1)':
+    dependencies:
+      express: 4.22.1
 
   '@pinojs/redact@0.4.0': {}
 
