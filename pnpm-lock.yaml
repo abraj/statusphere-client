@@ -228,6 +228,11 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
+  '@onelyid/common@file:../onelyid/packages/common':
+    resolution: {directory: ../onelyid/packages/common, type: directory}
+    peerDependencies:
+      express: ^4.17.2
+
   '@onelyid/express@file:../onelyid/packages/express':
     resolution: {directory: ../onelyid/packages/express, type: directory}
     peerDependencies:
@@ -1145,8 +1150,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  '@onelyid/common@file:../onelyid/packages/common(express@4.22.1)':
+    dependencies:
+      express: 4.22.1
+
   '@onelyid/express@file:../onelyid/packages/express(express@4.22.1)':
     dependencies:
+      '@onelyid/common': file:../onelyid/packages/common(express@4.22.1)
       express: 4.22.1
 
   '@pinojs/redact@0.4.0': {}
